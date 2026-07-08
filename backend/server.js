@@ -16,6 +16,10 @@ app.use(express.json());
 const authRoutes = require('./routes/authRoutes');
 app.use('/api/auth', authRoutes);
 
+// AI Engine Inference Router Boundary Connection
+const aiRoutes = require('./routes/aiRoutes');
+app.use('/api/ai', aiRoutes);
+
 // Base Server Health Check Endpoint
 app.get('/health', (req, res) => {
     res.status(200).json({ status: 'active', message: 'RIE Backend Server running smoothly' });
